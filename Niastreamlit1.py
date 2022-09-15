@@ -29,6 +29,8 @@ else:
 
 filename = uploaded_file.name
 
+print(filename)
+
 TPAS = ('Mednet','NextCare', 'Dhofar', 'Vipul', 'InHouse')
 
 #file_path = '/Users/praneethchoda/Downloads/Paramount :Important/NIA_Health_Automation/Claims Consolidation_HS.2021_FINAL.xlsx'
