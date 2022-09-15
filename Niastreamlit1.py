@@ -1,9 +1,14 @@
-#!/usr/bin/env python
-# coding: utf-8
 
 import numpy as np
 import pandas as pd
 import streamlit as st
+import xlsxwriter
+
+
+#st.write("Streamlit version:", st.__version__)
+
+#from pyxlsb import open_workbook as open_xlsb
+
 # Page config
 #st.set_page_config(page_title="NIA HEALTH ANALYSIS", layout="wide")
 
@@ -26,7 +31,7 @@ filename=uploaded_file.name
 
 TPAS = ('Mednet','NextCare', 'Dhofar', 'Vipul', 'InHouse')
 
-file_path = '/Users/praneethchoda/Downloads/Paramount :Important/NIA_Health_Automation/Claims Consolidation_HS.2021_FINAL.xlsx'
+#file_path = '/Users/praneethchoda/Downloads/Paramount :Important/NIA_Health_Automation/Claims Consolidation_HS.2021_FINAL.xlsx'
 
 Nia_Hlth_Data = pd.read_excel(filename, sheet_name = ['Mednet','NextCare', 'Dhofar', 'Vipul', 'InHouse'])
 
@@ -103,8 +108,6 @@ for hh in range(len(InHouse_heads_r)):
     elif InHouse_heads_r[hh] == "Prem Band" or InHouse_heads_r[hh] =="PremBand_Revised" or InHouse_heads_r[hh] =="Revised_PremBand":
         InHouse_heads_r[hh] = 'PremBand'
         
-
-
 NextCare_heads_r = pd.DataFrame(NextCare_heads_r)
 Dhofar_heads_r = pd.DataFrame(Dhofar_heads_r)
 Vipul_heads_r = pd.DataFrame(Vipul_heads_r)
@@ -112,7 +115,6 @@ InHouse_heads_r = pd.DataFrame(InHouse_heads_r)
         
 #data_heads_r = pd.concat([Mednet_heads_r, NextCare_heads_r,Dhofar_heads_r,Vipul_heads_r,
                           #InHouse_heads_r], axis=1)   
-
 
 Mednet_r = Mednet
 NextCare_r = NextCare
@@ -132,6 +134,16 @@ print(Appended_data_r)
 len(Appended_data_r.columns)
 
 Appended_data_r.to_excel("Appended TPA Data.xlsx")
+
+with open("Appended TPA Data.xlsx", "rb") as file:
+    btn = st.download_button(
+        label="click to download appended excel",
+        data=file,
+        file_name="Appended_Data1.xlsx",
+        mime="application/octet-stream"
+        )
+#st.download_button(‘Download file’,data=Appended_data_r.to_excel(data_source,index=False), mime=“text/csv”)
+
 
 
 
