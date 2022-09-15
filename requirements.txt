@@ -1,6 +1,3 @@
 numpy
-math
 pandas
 streamlit
-matplotlib.pyplot
-scipy
