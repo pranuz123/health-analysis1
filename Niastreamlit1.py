@@ -29,7 +29,7 @@ else:
 
 filename = uploaded_file.name
 
-print(filename)
+st.write(filename)
 
 TPAS = ('Mednet','NextCare', 'Dhofar', 'Vipul', 'InHouse')
 
