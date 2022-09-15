@@ -22,8 +22,6 @@ uploaded_file = st.file_uploader("Upload File Here!")
 
 global df1
 if uploaded_file is not None:
-    df1=pd.read_csv(uploaded_file, encoding='latin1', on_bad_lines='skip',
-                 lineterminator='\n')
     df1=pd.read_excel(uploaded_file)
 else:
     st.warning('you need to upload a csv or excel file')
