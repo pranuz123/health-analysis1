@@ -2,14 +2,8 @@
 # coding: utf-8
 
 import numpy as np
-import math
 import pandas as pd
 import streamlit as st
-import matplotlib.pyplot as plt
-import scipy
-from scipy import stats
-from sklearn.linear_model import LinearRegression
-
 # Page config
 #st.set_page_config(page_title="NIA HEALTH ANALYSIS", layout="wide")
 
