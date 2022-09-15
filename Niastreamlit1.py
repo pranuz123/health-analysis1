@@ -16,9 +16,9 @@ import xlsxwriter
 #config, instructions, readme = load_config(
    # "config_streamlit.toml", "config_instructions.toml", "config_readme.toml"
 
-st.title("NIA Health")  # add a title
+st.title("Appending Health")  # add a title
     
-uploaded_file = st.file_uploader("Upload File")
+uploaded_file = st.file_uploader("Upload File Here!")
 
 if uploaded_file is not None:
     df1=pd.read_csv(uploaded_file, encoding='latin1', on_bad_lines='skip',
@@ -27,7 +27,7 @@ if uploaded_file is not None:
 else:
     st.warning('you need to upload a csv or excel file')
 
-filename=uploaded_file.name
+filename = uploaded_file.name
 
 TPAS = ('Mednet','NextCare', 'Dhofar', 'Vipul', 'InHouse')
 
