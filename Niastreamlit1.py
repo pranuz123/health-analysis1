@@ -22,7 +22,7 @@ uploaded_file = st.file_uploader("Upload File Here!")
 
 global df1
 if uploaded_file is not None:
-    df1=pd.read_excel(uploaded_file)
+    df1=pd.read_excel(uploaded_file, sheet_name = ['Mednet','NextCare', 'Dhofar', 'Vipul', 'InHouse'])
 else:
     st.warning('you need to upload a csv or excel file')
 
@@ -34,7 +34,7 @@ TPAS = ('Mednet','NextCare', 'Dhofar', 'Vipul', 'InHouse')
 
 #file_path = '/Users/praneethchoda/Downloads/Paramount :Important/NIA_Health_Automation/Claims Consolidation_HS.2021_FINAL.xlsx'
 
-Nia_Hlth_Data = pd.read_excel(filename, sheet_name = ['Mednet','NextCare', 'Dhofar', 'Vipul', 'InHouse'])
+Nia_Hlth_Data = df1
 
 Mednet = Nia_Hlth_Data.get('Mednet')
 NextCare = Nia_Hlth_Data.get('NextCare')
