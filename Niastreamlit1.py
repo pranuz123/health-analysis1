@@ -20,6 +20,7 @@ st.title("Appending Health")  # add a title
     
 uploaded_file = st.file_uploader("Upload File Here!")
 
+global df1
 if uploaded_file is not None:
     df1=pd.read_csv(uploaded_file, encoding='latin1', on_bad_lines='skip',
                  lineterminator='\n')
